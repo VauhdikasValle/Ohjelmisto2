@@ -1,23 +1,16 @@
-class Luokkahuone():
-    def __init__(self, tunnus, istumapaikat, tykki, ilmastointi, taulu, ikkuna):
-        self.tunnus = tunnus
-        self.istumapaikat = istumapaikat
-        self.tykki = tykki
-        self.ilmastointi = ilmastointi
-        self.taulu = taulu
-        self.ikkuna = ikkuna
+class Car:
+    def __init__(self, license_plate, maximum_speed):
+        self.license_plate = license_plate
+        self.maximum_speed = maximum_speed
+        self.current_speed = 0
+        self.travelled_distance = 0
 
     def __repr__(self):
-        return  f"Luokkahuone on {self.tunnus}:\n" \
-                f" * paikkoja: {self.istumapaikat}\n" \
-                f" * tykki: {self.tykki}\n" \
-                f" * ilmastointi: {self.ilmastointi}\n" \
-                f" * taulu: {self.taulu}\n" \
-                f" * ikkuna: {self.ikkuna}\n" \
+        return  f"License plate: {self.license_plate}\n" \
+                f"Maximum speed: {self.maximum_speed}\n" \
+                f"Current speed: {self.current_speed}\n" \
+                f"Travelled distance: {self.travelled_distance}\n" \
 
-kme562 = Luokkahuone("kme562",30,"Epson",None,10, 6)
-kme572 = Luokkahuone("kme572", 29, None, None, 1, 6)
+car = Car("ABC-123","142 km/h")
 
-print(kme562)
-print(kme572)
-
+print(car)
