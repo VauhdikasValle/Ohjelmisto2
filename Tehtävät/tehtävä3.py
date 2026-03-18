@@ -5,6 +5,9 @@ class Car:
         self.current_speed = 0
         self.travelled_distance = 0
 
+    def drive(self, tunnit):
+        self.travelled_distance += self.current_speed * tunnit
+
     def accelerate(self, change):
         uusi_nopeus = self.current_speed + change
         if uusi_nopeus > self.maximum_speed:
@@ -13,6 +16,3 @@ class Car:
             self.current_speed = 0
         else:
             self.current_speed = uusi_nopeus
-
-
-
