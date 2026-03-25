@@ -149,3 +149,14 @@ footer {
     border: 4px solid black;
     box-shadow: 4px 4px 4px black;
 }
+.map-container {
+    width: 600px;      /* haluttu leveys */
+    margin: 20px auto; /* ylä- ja alaväli 20px, keskitys vaakasuunnassa */
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 450px;     /* sama kuin HTML:ssä */
+    border: 0;
+    display: block;    /* tärkeä keskitykselle */
+}
