@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Valde's Basics</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <h1 class="title">
+        <span class="valdes">Valde's</span>
+        <span class="basic">BASIC</span>
+    </h1>
+    <p class="subtitle">Learning and Education Fun!</p>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+        <a href="results.html">Results</a>
+    </nav>
+</header>
+
+<!-- Piilotettu YouTube-musiikki -->
+<div style="display:none;">
+    <iframe
+            id="ytplayer"
+            src="https://www.youtube.com/embed/cwz4rtQRxcQ?autoplay=1&loop=1&playlist=cwz4rtQRxcQ&controls=0&mute=0"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+    </iframe>
+</div>
+
+<script>
+    // Ladataan YouTube Player API
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScript = document.getElementsByTagName('script')[0];
+    firstScript.parentNode.insertBefore(tag, firstScript);
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('ytplayer', {
+            events: { 'onReady': onPlayerReady }
+        });
+    }
+
+    function onPlayerReady(event) {
+        // Aseta äänenvoimakkuus (0–100)
+        event.target.setVolume(30);
+        event.target.playVideo();
+    }
+</script>
+
+<main>
+    <section>
+        <h2>Learn Math the Fun Way!</h2>
+        <p>Welcome to Valde's Basic learning website. Practice math, explore school tools and enjoy studying!</p>
+    </section>
+
+    <section>
+        <h2>About the Site</h2>
+        <p>This website is inspired by retro school learning style similar to classic education games.</p>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Valde's Basic</p>
+</footer>
+
+</body>
+</html>
