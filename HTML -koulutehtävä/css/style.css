@@ -118,7 +118,7 @@ section {
 
     margin-bottom: 40px;
 
-    box-shadow: 6px 6px 0px black;
+    box-shadow: 6px 6px 6px black;
 
 }
 
@@ -134,3 +134,4 @@ footer {
     padding: 15px;
 
 }
+
