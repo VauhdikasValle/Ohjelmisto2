@@ -34,8 +34,8 @@ class Building:
         self.elevators = []
 
         for i in range(number_of_elevators):
-        new_elevator = Elevator(bottom_floor, top_floor)
-        self.elevators.append(new_elevator)
+            new_elevator = Elevator(bottom_floor, top_floor)
+            self.elevators.append(new_elevator)
 
     def run_elevator(self, elevator_number, destination_floor):
         hissi = self.elevators[elevator_number]
