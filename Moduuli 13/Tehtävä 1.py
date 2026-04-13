@@ -1,23 +1,22 @@
-import flask
-from flask import Flask  #tätä mä en tajuu miksei toimi
+from flask import Flask
 
-app = flask.Flask(__name__)
+app = Flask(__name__)
 
-@app.route('/alkuluku/<int:number>')
+@app.route('/alkuluku/<int:integer>')
 
-def check_prime(number):
+def aluku(integer):
     is_prime = True
-    if number < 2:
+    if integer < 2:
         is_prime = False
 
     else:
-        for i in range(2, number):
-            if number % i == 0:
+        for i in range(2, integer):
+            if integer % i == 0:
                 is_prime = False
 
                 break
 
-    return {"Number": number, "isPrime": is_prime}
+    return {"Number": integer, "isPrime": is_prime}
 
 if __name__ == '__main__':
     app.run(use_reloader=True, host='127.0.0.1', port=3000)
