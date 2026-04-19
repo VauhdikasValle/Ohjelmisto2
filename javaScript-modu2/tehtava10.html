@@ -14,21 +14,31 @@
         for (let i = 0; i < candidateCount; i++) {
 
             let candidateName = prompt("Name for candidate " + (i + 1));
-        candidates.push({ name: candidateName, votes: 0 });
+            candidates.push({ name: candidateName, votes: 0 });
         }
 
         let voterCount = prompt("How many voters?")
+
         for (let i = 0; i < voterCount; i++) {
             let GivenName = prompt("Who you will vote for?");
+
+            if (!GivenName) {
+                 continue;
+            }
+
             let foundCandidate = candidates.find(c => c.name === GivenName);
+
             if (foundCandidate) {
             foundCandidate.votes++;
             }
         }
 
         candidates.sort((a, b) => b.votes - a.votes);
+
         console.log("The winner is " + candidates[0].name + " with " + candidates[0].votes + " votes.");
+
         console.log("results:");
+
         for (let i = 0; i < candidates.length; i++) {
             console.log(candidates[i].name + ": " + candidates[i].votes + " votes");
         }
