@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtava2</title>
+</head>
+<body>
+    <script>
+        let participants = [];
+
+        let participantCount = prompt("How many participants?");
+
+        for (let i = 0; i < participantCount; i++) {
+            participants.push(prompt("Name for participant " + (i + 1)));
+        }
+
+        participants.sort();
+
+        document.write("<ol>");
+
+        for (let i = 0; i < participants.length; i++) {
+            document.write("<li>" + participants[i] + "</li>");
+        }
+
+        document.write("</ol>");
+
+    </script>
+</body>
+</html>
