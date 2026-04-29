@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtava 1.2.3</title>
+
+    <style>
+        a {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+<body>
+
+<form id="search-form">
+    <input id="query" name="q" type="text">
+    <input type="submit" value="Search">
+</form>
+
+<div id="results"></div>
+
+<script>
+    'use strict';
+
+    const tvForm = document.querySelector('#search-form');
+
+    tvForm.addEventListener('submit', function(evt) {
+        evt.preventDefault();
+        const hakusana = document.querySelector('#query').value;
+        console.log("Etsitään sarjaa:", hakusana);
+        
+        fetch(`https://api.tvmaze.com/search/shows?q=${hakusana}`)
+            .then(vastaus => vastaus.json())
+            .then(data => {
+                console.log("Tulokset:", data);
+
+                const resultsDiv = document.querySelector('#results');
+                resultsDiv.innerHTML = '';
+
+                data.forEach(tvShow => {
+                    const show = tvShow.show;
+
+                    const article = document.createElement('article');
+
+                    const title = document.createElement('h2');
+                    title.textContent = show.name;
+
+                    const link = document.createElement('a');
+                    link.href = show.url;
+                    link.textContent = "View details";
+                    link.target = "_blank";
+
+                    const img = document.createElement('img');
+                    img.src = show.image?.medium || '';
+                    img.alt = show.name;
+
+                    const summary = document.createElement('div');
+                    summary.innerHTML = show.summary || '';
+
+                    article.appendChild(title);
+                    article.appendChild(link);
+                    article.appendChild(img);
+                    article.appendChild(summary);
+
+                    resultsDiv.appendChild(article);
+          });
+        });
+    });
+  </script>
+
+</body>
+</html>
